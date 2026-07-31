@@ -1,0 +1,5 @@
+services:
+  web:
+    image: nginx:alpine
+    container_name: lab-restart-policy
+    restart: "no"
