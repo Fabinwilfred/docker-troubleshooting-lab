@@ -1,0 +1,9 @@
+services:
+  web:
+    image: nginx:alpine
+    container_name: lab-healthcheck
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:9999/ >/dev/null || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 3
