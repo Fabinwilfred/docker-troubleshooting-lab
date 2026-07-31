@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Docker Troubleshooting Lab - Frontend</title>
+  </head>
+  <body>
+    <h1>Frontend</h1>
+    <p>This is a minimal frontend. It can call the API at <code>/api/</code>.</p>
+    <script>
+      fetch('/api/').then(r=>r.json()).then(j=>{
+        const p = document.createElement('pre');
+        p.textContent = JSON.stringify(j, null, 2);
+        document.body.appendChild(p);
+      }).catch(e=>console.error(e));
+    </script>
+  </body>
+</html>
