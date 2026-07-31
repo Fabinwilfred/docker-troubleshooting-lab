@@ -1,0 +1,8 @@
+services:
+  app:
+    image: alpine:3.20
+    container_name: lab-env-vars
+    environment:
+      APP_ENV: production
+      API_URL: http://api.wrong.local
+    command: ["sh", "-c", "echo APP_ENV=$$APP_ENV API_URL=$$API_URL; tail -f /dev/null"]
