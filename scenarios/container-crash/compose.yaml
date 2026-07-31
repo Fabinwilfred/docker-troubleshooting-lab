@@ -1,0 +1,5 @@
+services:
+  worker:
+    image: alpine:3.20
+    container_name: lab-container-crash
+    command: ["sh", "-c", "echo 'worker finished unexpectedly'; exit 1"]
