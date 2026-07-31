@@ -1,0 +1,13 @@
+services:
+  api:
+    image: nginx:alpine
+    container_name: lab-network-api
+    networks: [api_net]
+  client:
+    image: alpine:3.20
+    container_name: lab-network-client
+    command: ["sh", "-c", "while true; do sleep 3600; done"]
+    networks: [client_net]
+networks:
+  api_net: {}
+  client_net: {}
